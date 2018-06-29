@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using MvcOpinionatedTemplate.Core.Interfaces.Services;
 using MvcOpinionatedTemplate.Web.Models;
 using System;
 using System.Diagnostics;
-using Microsoft.Extensions.Configuration;
-using MvcOpinionatedTemplate.Core.Interfaces.Services;
 
 namespace MvcOpinionatedTemplate.Web.Controllers
 {

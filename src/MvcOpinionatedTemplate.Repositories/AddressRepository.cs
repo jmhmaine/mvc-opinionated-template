@@ -1,10 +1,10 @@
 ﻿using MvcOpinionatedTemplate.Core.Base;
-using System.Collections.Generic;
-using System.Linq;
 using MvcOpinionatedTemplate.Core.Interfaces;
 using MvcOpinionatedTemplate.Core.Interfaces.Domain;
 using MvcOpinionatedTemplate.Core.Interfaces.Repositories;
 using MvcOpinionatedTemplate.Domain.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MvcOpinionatedTemplate.Repositories
 {

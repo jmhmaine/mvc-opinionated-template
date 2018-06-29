@@ -1,9 +1,9 @@
-﻿using System;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Serilog.Events;
 using Serilog;
+using Serilog.Events;
 using Serilog.Formatting.Compact;
+using System;
 
 namespace MvcOpinionatedTemplate.Web
 {
@@ -17,7 +17,7 @@ namespace MvcOpinionatedTemplate.Web
                                 .MinimumLevel.Override("System", LogEventLevel.Fatal)
                                 .Enrich.FromLogContext()
                                 .WriteTo.Console()
-                                .WriteTo.File(new CompactJsonFormatter(), @"..\..\log\mvc.log", rollingInterval: RollingInterval.Minute)
+                                .WriteTo.File(new CompactJsonFormatter(), @"..\..\log\mvc.log", rollingInterval: RollingInterval.Day)
                                 .CreateLogger();
 
             try

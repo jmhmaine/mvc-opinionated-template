@@ -1,7 +1,7 @@
 ﻿using MvcOpinionatedTemplate.Core.Interfaces.Domain;
+using MvcOpinionatedTemplate.Domain.Models.Base;
 using System;
 using System.ComponentModel.DataAnnotations;
-using MvcOpinionatedTemplate.Domain.Models.Base;
 
 namespace MvcOpinionatedTemplate.Domain.Models
 {

@@ -1,11 +1,9 @@
-﻿using System;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using MvcOpinionatedTemplate.Core.Interfaces;
 using MvcOpinionatedTemplate.Core.Interfaces.Repositories;
 using MvcOpinionatedTemplate.Core.Interfaces.Services;
@@ -47,6 +45,7 @@ namespace MvcOpinionatedTemplate.Web
             services.AddScoped<IUserContext, UserContext>();
 
             services.AddHttpContextAccessor();
+            services.AddMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
