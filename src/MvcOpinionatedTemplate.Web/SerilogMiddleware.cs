@@ -93,9 +93,7 @@ namespace MvcOpinionatedTemplate.Web
 
         private static PathString GetPath(HttpContext httpContext)
         {
-            var rawTarget = httpContext.Features.Get<IHttpRequestFeature>()?.RawTarget;
-
-            return rawTarget != null ? new PathString(rawTarget) : httpContext.Request.Path;
+            return httpContext.Features.Get<IHttpRequestFeature>()?.RawTarget ?? httpContext.Request.Path.ToString();
         }
     }
 }
