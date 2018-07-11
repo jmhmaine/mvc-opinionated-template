@@ -4,15 +4,12 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<p>Process Name: @ViewBag.ProcessName</p>
-
-<h3>Sessions</h3>
-<p>Session Value for SetTime: @ViewBag.SessionKeyNameValue</p>
-
-<h3>United States and Canadian States, Territories, and other regions that have a postal code</h3>
+Examples
 <ul>
-    @foreach (var state in ViewBag.StateList)
-    {
-        <li>@state.StateName (@state.StateCode)</li>
-    }
+    <li>@Html.ActionLink("Configuration", "Config", null, htmlAttributes: new { target = "_blank" })</li>
+    <li>@Html.ActionLink("Distributed Cache", "DistributedCache", null, htmlAttributes: new { target = "_blank" })</li>
+    <li>@Html.ActionLink("Exception", "ShowAnException", null, htmlAttributes: new { target = "_blank" })</li>
+    <li>@Html.ActionLink("Logger", "Log", null, htmlAttributes: new { target = "_blank" })</li>
+    <li>@Html.ActionLink("Session", "Session", null, htmlAttributes: new { target = "_blank" })</li>
 </ul>
+

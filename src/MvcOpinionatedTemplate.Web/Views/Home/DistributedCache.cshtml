@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Distributed Cache Example";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>United States and Canadian States, Territories, and other regions that have a postal code</h3>
+<ul>
+    @foreach (var state in ViewBag.StateList)
+    {
+        <li>@state.StateName (@state.StateCode)</li>
+    }
+</ul>

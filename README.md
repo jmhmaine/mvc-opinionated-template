@@ -8,8 +8,9 @@ Notes:
 * Uses a Base Controller to provide Logger and Configuration properties
 * Uses Serilog for application logging ( https://serilog.net/ )
 * Uses Serilog Middleware Example for Smart Request Logging ( based on: https://github.com/datalust/serilog-middleware-example )
-* Caching is supported at Service layer using MemoryCache (MVC adds a default memory cache implementation when configuring the Razor view engine)
-* Don't need to call services.AddDistributedMemoryCache() in MVC, adds by memory cache default
+* Caching is supported at Service layer using IDistributedCache
+* Don't need to call services.AddDistributedMemoryCache() in MVC (MVC adds a default memory cache implementation when configuring the Razor view engine)
+* Caching at Web/UI layer can either be done with IMemoryCache (local to host/application) or IDistributedCache (shared across web farm)
 * Installed Microsoft.Extensions.Caching.Memory version 2.1.0 instead of 2.1.1 because of compatibility issue with ASP.NET Core project
 
 Todo:

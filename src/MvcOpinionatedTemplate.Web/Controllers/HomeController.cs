@@ -21,21 +21,41 @@ namespace MvcOpinionatedTemplate.Web.Controllers
             _addressService = addressService;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Log()
         {
             Logger.Log(LogLevel.Information, "Logging Example.");
 
-            //if (string.IsNullOrEmpty(HttpContext.Session.GetString(SessionKeySetTime)))
-            //{
-            //    HttpContext.Session.SetString(SessionKeySetTime, DateTimeOffset.Now.ToString());
-            //}
+            return View();
+        }
 
-            //ViewBag.SessionKeyNameValue = HttpContext.Session.GetString(SessionKeySetTime);
+        public IActionResult Session()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(SessionKeySetTime)))
+            {
+                HttpContext.Session.SetString(SessionKeySetTime, DateTimeOffset.Now.ToString());
+            }
 
-            ViewBag.SessionKeyNameValue = "n/a";
+            ViewBag.SessionKeyNameValue = HttpContext.Session.GetString(SessionKeySetTime);
 
-            ViewBag.StateList = await _addressService.GetAllStatesAsync<State>();
+            return View();
+        }
+
+        public IActionResult Config()
+        {
             ViewBag.ProcessName = Configuration["ProcessName"];
+
+            return View();
+        }
+
+        [ActionName("DistributedCache")]
+        public async Task<IActionResult> DistributedCacheAsync()
+        {
+            ViewBag.StateList = await _addressService.GetAllStatesAsync<State>();
 
             return View();
         }
