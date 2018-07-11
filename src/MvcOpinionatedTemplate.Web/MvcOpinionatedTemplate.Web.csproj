@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Serilog.Formatting.Compact" Version="1.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
@@ -14,6 +15,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MvcOpinionatedTemplate.Core\MvcOpinionatedTemplate.Core.csproj" />
+    <ProjectReference Include="..\MvcOpinionatedTemplate.Domain\MvcOpinionatedTemplate.Domain.csproj" />
+    <ProjectReference Include="..\MvcOpinionatedTemplate.Repositories\MvcOpinionatedTemplate.Repositories.csproj" />
     <ProjectReference Include="..\MvcOpinionatedTemplate.Services\MvcOpinionatedTemplate.Services.csproj" />
   </ItemGroup>
 

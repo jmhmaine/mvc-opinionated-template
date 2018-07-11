@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MvcOpinionatedTemplate.Core\MvcOpinionatedTemplate.Core.csproj" />
     <ProjectReference Include="..\MvcOpinionatedTemplate.Domain\MvcOpinionatedTemplate.Domain.csproj" />
   </ItemGroup>

@@ -19,13 +19,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0EC132D1-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcOpinionatedTemplate.Core", "src\MvcOpinionatedTemplate.Core\MvcOpinionatedTemplate.Core.csproj", "{C81C1C8A-1D6A-4C85-B735-B1C46D7AED45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcOpinionatedTemplate.Core.Test", "test\MvcOpinionatedTemplate.Core.Test\MvcOpinionatedTemplate.Core.Test.csproj", "{C6ECB957-2B89-4F87-9BBA-3E614413CCC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcOpinionatedTemplate.Core.Test", "test\MvcOpinionatedTemplate.Core.Test\MvcOpinionatedTemplate.Core.Test.csproj", "{C6ECB957-2B89-4F87-9BBA-3E614413CCC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcOpinionatedTemplate.Repositories", "src\MvcOpinionatedTemplate.Repositories\MvcOpinionatedTemplate.Repositories.csproj", "{5714686C-35AF-4D8A-925C-506DAA8D4726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcOpinionatedTemplate.Repositories", "src\MvcOpinionatedTemplate.Repositories\MvcOpinionatedTemplate.Repositories.csproj", "{5714686C-35AF-4D8A-925C-506DAA8D4726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcOpinionatedTemplate.Domain", "src\MvcOpinionatedTemplate.Domain\MvcOpinionatedTemplate.Domain.csproj", "{D4EC0A8B-5134-4110-8A99-DAA8D07FFFE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcOpinionatedTemplate.Domain", "src\MvcOpinionatedTemplate.Domain\MvcOpinionatedTemplate.Domain.csproj", "{D4EC0A8B-5134-4110-8A99-DAA8D07FFFE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcOpinionatedTemplate.Services", "src\MvcOpinionatedTemplate.Services\MvcOpinionatedTemplate.Services.csproj", "{F25EC11D-BB2C-48A6-9B28-28B453F412B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcOpinionatedTemplate.Services", "src\MvcOpinionatedTemplate.Services\MvcOpinionatedTemplate.Services.csproj", "{F25EC11D-BB2C-48A6-9B28-28B453F412B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcOpinionatedTemplate.TestSupport", "MvcOpinionatedTemplate.TestSupport\MvcOpinionatedTemplate.TestSupport.csproj", "{A0A84D73-BF67-496B-B762-431658782BF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{F25EC11D-BB2C-48A6-9B28-28B453F412B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F25EC11D-BB2C-48A6-9B28-28B453F412B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F25EC11D-BB2C-48A6-9B28-28B453F412B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A84D73-BF67-496B-B762-431658782BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A84D73-BF67-496B-B762-431658782BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A84D73-BF67-496B-B762-431658782BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A84D73-BF67-496B-B762-431658782BF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{5714686C-35AF-4D8A-925C-506DAA8D4726} = {8311DA80-9E30-4CB8-B26D-699F861282F0}
 		{D4EC0A8B-5134-4110-8A99-DAA8D07FFFE3} = {8311DA80-9E30-4CB8-B26D-699F861282F0}
 		{F25EC11D-BB2C-48A6-9B28-28B453F412B5} = {8311DA80-9E30-4CB8-B26D-699F861282F0}
+		{A0A84D73-BF67-496B-B762-431658782BF0} = {0EC132D1-DE6B-4BAD-90AC-189903F0180D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {520FBE1D-B81B-49F9-AD26-2BD94EF4F12E}

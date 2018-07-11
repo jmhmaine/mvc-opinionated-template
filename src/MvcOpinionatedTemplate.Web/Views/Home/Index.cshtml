@@ -4,6 +4,11 @@
 
 <h1>@ViewData["Title"]</h1>
 
+<p>Process Name: @ViewBag.ProcessName</p>
+
+<h3>Sessions</h3>
+<p>Session Value for SetTime: @ViewBag.SessionKeyNameValue</p>
+
 <h3>United States and Canadian States, Territories, and other regions that have a postal code</h3>
 <ul>
     @foreach (var state in ViewBag.StateList)
@@ -11,5 +16,3 @@
         <li>@state.StateName (@state.StateCode)</li>
     }
 </ul>
-
-<p>Process Name: @ViewBag.ProcessName</p>

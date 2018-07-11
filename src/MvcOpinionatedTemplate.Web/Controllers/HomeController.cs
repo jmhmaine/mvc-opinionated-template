@@ -1,27 +1,40 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MvcOpinionatedTemplate.Core.Interfaces.Services;
 using MvcOpinionatedTemplate.Web.Models;
 using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using MvcOpinionatedTemplate.Domain.Models;
 
 namespace MvcOpinionatedTemplate.Web.Controllers
 {
     public class HomeController : BaseController<HomeController>
     {
         private readonly IAddressService _addressService;
+        private const string SessionKeySetTime = "_SetTime";
 
         public HomeController(IConfiguration configuration, ILogger<HomeController> logger, IAddressService addressService) : base(configuration,logger)
         {
             _addressService = addressService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             Logger.Log(LogLevel.Information, "Logging Example.");
 
-            ViewBag.StateList = _addressService.GetAllStates();
+            //if (string.IsNullOrEmpty(HttpContext.Session.GetString(SessionKeySetTime)))
+            //{
+            //    HttpContext.Session.SetString(SessionKeySetTime, DateTimeOffset.Now.ToString());
+            //}
+
+            //ViewBag.SessionKeyNameValue = HttpContext.Session.GetString(SessionKeySetTime);
+
+            ViewBag.SessionKeyNameValue = "n/a";
+
+            ViewBag.StateList = await _addressService.GetAllStatesAsync<State>();
             ViewBag.ProcessName = Configuration["ProcessName"];
 
             return View();

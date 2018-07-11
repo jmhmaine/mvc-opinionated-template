@@ -9,7 +9,9 @@ using MvcOpinionatedTemplate.Core.Interfaces.Repositories;
 using MvcOpinionatedTemplate.Core.Interfaces.Services;
 using MvcOpinionatedTemplate.Repositories;
 using MvcOpinionatedTemplate.Services.Domain;
+using MvcOpinionatedTemplate.Services.Infrastructure;
 using MvcOpinionatedTemplate.Web.User;
+using System;
 
 namespace MvcOpinionatedTemplate.Web
 {
@@ -32,8 +34,17 @@ namespace MvcOpinionatedTemplate.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddSessionStateTempDataProvider(); // configures TempData provider from using cookie to Session
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(1); // TODO: Update after testing
+                options.Cookie.HttpOnly = true;
+            });
+
+            services.AddSingleton<ICacheClass, CacheClass>();
 
             // Register Repositories
             services.AddTransient<IAddressRepository, AddressRepository>();
@@ -45,7 +56,6 @@ namespace MvcOpinionatedTemplate.Web
             services.AddScoped<IUserContext, UserContext>();
 
             services.AddHttpContextAccessor();
-            services.AddMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +77,7 @@ namespace MvcOpinionatedTemplate.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
